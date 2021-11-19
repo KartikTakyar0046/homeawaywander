@@ -123,7 +123,7 @@ display: block; position: absolute; left: 100px; top: 0; }
 <div class="topnav" id="myTopnav">
   <a href="/" class="active">Answerly</a>
   <a href="{% url 'ask-question'%}">Ask Something</a>
-  <a href="{% url 'show-notifications'%}">Notifications<span class="badge">{{notifications.count}}</span></a>
+  <a href="{% url 'show-notifications'%}">Notifications</a>
   <a href="{% url 'logout' %}">Logout</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
