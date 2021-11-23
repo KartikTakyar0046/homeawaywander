@@ -62,26 +62,22 @@ background-color: #f44336;
 
 <br>
 
-{{quest_user}}
   </a>
-  <h3><div><strong>Question</strong></div></h3>
-<div><h4>{{quest.body|safe}}</h4> <br><h2><a href="{% url 'add-answer' quest.slug %}"><i class="material-icons">add_circle</i>Add an answer</a></h2>
+  <h3><div><strong>Travel to {{quest.body|safe}}</strong></div></h3>
+<div> <br><h2><a href="{% url 'add-answer' quest.slug %}"><i class="material-icons">add_circle</i>Add your {{quest.body|safe}} Experience</a></h2>
 <br>
 </div>
 <br>
-<h3>
-<strong>Answers</strong>
-</h3>
 </center>
 
 {% for ans in answrs%}
-    		<div class="card card-body">
+    		<div class="card card-body" style="background-color:MediumSeaGreen">
 
     <h2 class="accordion-header" id="headingOne">
  
 
-      <h6>
-        {{ans.publisher}}</h6>
+      <h3>
+       By: {{ans.publisher}}</h3>
     </h2>
           <center>
      <center><p>{{ans.body|safe}}</p></center>

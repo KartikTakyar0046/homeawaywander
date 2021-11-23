@@ -118,11 +118,11 @@ display: block; position: absolute; left: 100px; top: 0; }
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
+<body style="background-image: url('{% static "images/bg5.jpg"%}')";>
     {% if user.is_authenticated %}
 <div class="topnav" id="myTopnav">
-  <a href="/" class="active">Answerly</a>
-  <a href="{% url 'ask-question'%}">Ask Something</a>
+  <a href="/" class="active">HomeAwayWander</a>
+  <a href="{% url 'ask-question'%}">New Travel?</a>
   <a href="{% url 'show-notifications'%}">Notifications</a>
   <a href="{% url 'logout' %}">Logout</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">

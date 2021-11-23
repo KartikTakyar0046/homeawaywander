@@ -47,19 +47,20 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-    'whitenoise.runserver_nostatic',
 ]
+SESSION_COOKIE_AGE = 5*60
 
 SITE_ID = 2
 MIDDLEWARE = [
+    'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',
 ]
 LOGGING = {
     'version': 1,
@@ -142,9 +143,14 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST='smtp.gmail.com'
 EMAIL_PORT='587'
 EMAIL_USE_TLS=True
-EMAIL_HOST_USER='ktakyar_be18@thapar.edu'
-EMAIL_HOST_PASSWORD='dawvygcfqxwyscoa'
-
+EMAIL_HOST_USER=''
+EMAIL_HOST_PASSWORD=''
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': '/var/tmp/django_cache',
+    }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/

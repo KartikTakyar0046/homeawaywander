@@ -1,6 +1,7 @@
 {%extends 'base.html' %}
-{% block content%}
+{% load static %}
 
+{% block content%}
 <!DOCTYPE html>
 <html>
 
@@ -12,12 +13,10 @@
 
 
 	<style>
-		body,
 		html {
 			margin: 0;
 			padding: 0;
 			height: 100%;
-			background: #7abecc !important;
 		}
 		.user_card {
 			width: 350px;
@@ -78,10 +77,11 @@
 	</style>
 
 </head>
-<body>
-	<div class="container h-100">
+<body style="background-image: url('{% static "images/bg5.jpg"%}')";>
+	<br><br><br><br><br><br>
+	<div class="container h-100" >
 		<div class="d-flex justify-content-center h-100">
-			<div class="user_card">
+			<div class="user_card" style="background-color:DodgerBlue;">
 				<div class="d-flex justify-content-center">
 
 
@@ -120,10 +120,10 @@
 				<div class="mt-4">
 
 					<div class="d-flex justify-content-center links">
-						Forgot Password?<a href="{% url 'password_reset' %}" class="ml-2">Reset Here</a>
+						Forgot Password?<a style="color: red;" href="{% url 'password_reset' %}" class="ml-2">Reset Here</a>
 					</div>
 					<div class="d-flex justify-content-center links">
-						Don't have an account? <a href="{% url 'register' %}" class="ml-2">Sign Up</a>
+						Don't have an account? <a style="color: red;" href="{% url 'register' %}" class="ml-2">Sign Up</a>
 					</div>
 
 				</div>

@@ -8,7 +8,7 @@ from ckeditor.fields import RichTextField
 
 class Question(models.Model):
     author=models.ForeignKey(User,on_delete=models.CASCADE)
-    body=RichTextField(blank=True, null=True)
+    body=models.CharField(max_length=100)
     published_date=models.DateTimeField(auto_now_add=True)
     ques_image = models.ImageField(upload_to="images/",default="defaultt.png", null=True, blank=True)
     slug = models.SlugField(unique=True, max_length=100,default="Some Question")

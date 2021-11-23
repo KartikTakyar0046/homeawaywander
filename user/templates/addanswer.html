@@ -18,7 +18,7 @@ background-color: #222;
 <div class="col-md">
 <form method="POST" action="" enctype="multipart/form-data" >
 				{% csrf_token %}
-	<label >Your Answer here</label>
+	<label >Your Experience here</label>
 	{{ form.media }}
 	{{form.as_p}}
 	<input class="btn btn-primary" type="submit" value="Submit" name="Update Information">
