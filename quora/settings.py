@@ -48,11 +48,9 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
 ]
-SESSION_COOKIE_AGE = 5*60
 
 SITE_ID = 2
 MIDDLEWARE = [
-    'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -60,7 +58,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.cache.FetchFromCacheMiddleware',
 ]
 LOGGING = {
     'version': 1,
@@ -145,12 +142,6 @@ EMAIL_PORT='587'
 EMAIL_USE_TLS=True
 EMAIL_HOST_USER=''
 EMAIL_HOST_PASSWORD=''
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
-        'LOCATION': '/var/tmp/django_cache',
-    }
-}
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/

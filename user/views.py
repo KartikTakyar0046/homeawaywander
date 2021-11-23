@@ -47,7 +47,6 @@ def loginPage(request):
 
             if user is not None:
                 login(request, user)
-                request.session.set_expiry(300)
                 return redirect('home')
             else:
                 messages.info(request, 'Username OR password is incorrect')
