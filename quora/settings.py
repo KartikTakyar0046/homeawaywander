@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'notifications',
     'ckeditor',
     'django.contrib.sites',
-    'taggit',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',

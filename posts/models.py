@@ -12,7 +12,6 @@ class Question(models.Model):
     published_date=models.DateTimeField(auto_now_add=True)
     ques_image = models.ImageField(upload_to="images/",default="defaultt.png", null=True, blank=True)
     slug = models.SlugField(unique=True, max_length=100,default="Some Question")
-    tags = TaggableManager()
     def __str__(self):
         return str(self.body)
 
